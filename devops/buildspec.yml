@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre-build:
+    commands:
+      - export NODE_OPTIONS="--max-old-space-size=8192"
+      - npm install -g @angular/cli
+      - npm install
+  build:
+    commands:
+      - ng build --output-hashing=all
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist/angular-app'
+  discard-paths: no
