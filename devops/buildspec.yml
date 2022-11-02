@@ -3,7 +3,7 @@ phases:
   install:
     runtime-versions:
       nodejs: 14
-  pre-build:
+  pre_build:
     commands:
       - export NODE_OPTIONS="--max-old-space-size=8192"
       - npm install -g @angular/cli
